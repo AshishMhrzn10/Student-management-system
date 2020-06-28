@@ -1,0 +1,27 @@
+appdirs==1.4.3
+asgiref==3.2.7
+astroid==2.4.1
+colorama==0.4.3
+distlib==0.3.0
+Django==3.0.6
+django-filter==2.3.0
+djangorestframework==3.11.0
+filelock==3.0.12
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+mysql-connector-python==8.0.20
+mysqlclient @ file:///C:/Users/Ashish/Downloads/mysqlclient-1.4.6-cp38-cp38-win32.whl
+Pillow==7.1.2
+protobuf==3.12.2
+psycopg2==2.8.5
+pycryptodome==3.9.7
+pylint==2.5.2
+pylint-django==2.0.15
+pylint-plugin-utils==0.6
+pytz==2020.1
+six==1.14.0
+sqlparse==0.3.1
+toml==0.10.1
+virtualenv==20.0.20
+wrapt==1.12.1
