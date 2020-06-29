@@ -1,5 +1,7 @@
 {% extends 'hod_template/base.html' %}
-{% block page_title %}Add Student{% endblock page_title %}
+{% block page_title %}
+    Edit Student | Username : {{username}} | #ID = {{id}}
+{% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
     <section class="content">
@@ -8,24 +10,17 @@
               <div class="col-md-3"></div>
               <div class="col-md-6">
             <!-- general form elements -->
-
+            
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Student</h3>
+                <h3 class="card-title">Edit Student</h3>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              {% url 'add_student_save' as action_path %}
-              {% include 'hod_template/form.html' with form=form action_path=action_path button_text="Add Student" %}
+              {% url 'edit_student_save' as action_path %}
+              {% include 'hod_template/form.html' with messages=messages form=form action_path=action_path button_text="Save Student" %}
             </div>
-            <!-- /.card -->
-
-
-
           </div>
           </div>
       </div>
     </section>
     <!-- /.content -->
 {% endblock main_content %}
-
