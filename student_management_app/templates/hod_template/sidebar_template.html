@@ -109,6 +109,16 @@
           </li>
 
           <li class="nav-item">
+            {% url 'manage_session' as manage_session %}
+            <a href="{{manage_session}}" class="nav-link {% if request.path == manage_session %}active{% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Manage Session Year
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             {% url 'view_attendance' as view_attendance %}
             <a href="{{view_attendance}}" class="nav-link {% if request.path == view_attendance %}active{% endif %}">
               <i class="nav-icon fas fa-th"></i>

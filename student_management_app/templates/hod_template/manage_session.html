@@ -1,0 +1,57 @@
+{% extends 'hod_template/base.html' %}
+{% block page_title %}Add Session year{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="form-group">
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == 'error' %}
+                <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                {% endif %}
+                {% if message.tags == 'success' %}
+                <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add session year</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="/add_session_save/" method="post">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Session start year </label>
+                    <input type="date" class="form-control" name="session_start" placeholder="Enter session start year">
+                  </div>
+                  <div class="form-group">
+                    <label>Session end year </label>
+                    <input type="date" class="form-control" name="session_end" placeholder="Enter session end year">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Add session year</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}

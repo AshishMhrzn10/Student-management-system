@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .emailBackend import emailBackend
 from django.contrib import messages
+from django.urls import reverse
 # Create your views here.
 def showDemoPage(request):
     return render(request, 'demo.html')
@@ -24,9 +25,9 @@ def doLogin(request):
             if user.user_type == "1":
                 return HttpResponseRedirect("/admin_home")
             elif user.user_type == "2":
-                return HttpResponse("Staff login"+str(user.user_type))
+               return HttpResponseRedirect(reverse("staff_home"))
             else:
-                return HttpResponse("Studentlogin"+str(user.user_type))
+                return HttpResponseRedirect(reverse("student_home"))
         else:
             messages.error(request,"Invalid login details")
             return HttpResponseRedirect("/")
