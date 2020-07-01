@@ -57,6 +57,11 @@ urlpatterns = [
 
     #Staff url path
     path('staff_home/', staffviews.staff_home, name="staff_home"),
+    path('staff_take_attendance/', staffviews.staff_take_attendance, name="staff_take_attendance"),
+    path('get_students/', staffviews.get_students, name="get_students"),
+    path('save_attendance_data/', staffviews.save_attendance_data, name="save_attendance_data"),
+
+    #Student url path
     path('student_home/', studentviews.student_home, name="student_home"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
