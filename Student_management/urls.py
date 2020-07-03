@@ -58,8 +58,12 @@ urlpatterns = [
     #Staff url path
     path('staff_home/', staffviews.staff_home, name="staff_home"),
     path('staff_take_attendance/', staffviews.staff_take_attendance, name="staff_take_attendance"),
+    path('staff_update_attendance/', staffviews.staff_update_attendance, name="staff_update_attendance"),
     path('get_students/', staffviews.get_students, name="get_students"),
+    path('get_attendance_dates/', staffviews.get_attendance_dates, name="get_attendance_dates"),
+    path('get_attendance_student/', staffviews.get_attendance_student, name="get_attendance_student"),
     path('save_attendance_data/', staffviews.save_attendance_data, name="save_attendance_data"),
+    path('save_updateattendance_data/', staffviews.save_updateattendance_data, name="save_updateattendance_data"),
 
     #Student url path
     path('student_home/', studentviews.student_home, name="student_home"),
