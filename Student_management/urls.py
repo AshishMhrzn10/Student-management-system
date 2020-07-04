@@ -22,6 +22,7 @@ from student_management_app import views,hodviews,studentviews,staffviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('demo/', views.showDemoPage),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', views.showLoginPage, name="show_login"),
     path('get_user_details/', views.GetUserDetails),
     path('logout_user/', views.logout_user,name='logout'),
@@ -71,5 +72,7 @@ urlpatterns = [
 
     #Student url path
     path('student_home/', studentviews.student_home, name="student_home"),
+    path('student_view_attendance/', studentviews.student_view_attendance, name="student_view_attendance"),
+    path('student_view_attendance_post/', studentviews.student_view_attendance_post, name="student_view_attendance_post"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

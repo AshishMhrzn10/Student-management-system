@@ -1,0 +1,22 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: mike123@gmail.com
+Date: Sat, 04 Jul 2020 14:13:34 -0000
+Message-ID: <159387201438.14212.4522154879020239788@DESKTOP-TU9Q8TO>
+
+
+    To initiate password reset mike999 for Student Management System
+    Click the link below
+
+    http://127.0.0.1:8000/accounts/reset/MTc/5hw-540918f56c1c3656e267/
+
+    If link is not working, then please trying copy and paste into URL.
+
+
+    Thanks,
+    Student Management System
+
+-------------------------------------------------------------------------------
