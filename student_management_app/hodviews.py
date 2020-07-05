@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from .forms import AddStudentForm, EditStudentForm
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 
 def admin_home(request):
@@ -325,19 +326,69 @@ def add_session_save(request):
             messages.error(request,"Failed To add session")
             return HttpResponseRedirect(reverse("manage_session"))
 
+@csrf_exempt
+def check_email_exist(request):
+    email = request.POST.get('email')
+    user_obj = CustomUser.objects.filter(email=email).exists()
+    if user_obj:
+        return HttpResponse(True)
+    else:
+        return HttpResponse(False)
+
+
+@csrf_exempt
+def check_username_exist(request):
+    username = request.POST.get('username')
+    user_obj = CustomUser.objects.filter(username=username).exists()
+    if user_obj:
+        return HttpResponse(True)
+    else:
+        return HttpResponse(False)
+
+
+def staff_feedback_message(request):
+    feedbacks = FeedBackStaff.objects.all()
+    return render(request,'hod_template/staff_feedback_template.html',{'feedbacks':feedbacks})
+
+
+@csrf_exempt
+def staff_feedback_message_replied(request):
+    feedback_id = request.POST.get('id')
+    feedback_message = request.POST.get('message')
+    try:
+        feedback = FeedBackStaff.objects.get(id=feedback_id)
+        feedback.feedback_reply = feedback_message
+        feedback.save()
+        return HttpResponse("True")
+    except:
+        return HttpResponse("False")
+
+
+def student_feedback_message(request):
+    feedbacks = FeedBackStudent.objects.all()
+    return render(request,'hod_template/student_feedback_template.html',{'feedbacks':feedbacks})
+
+
+@csrf_exempt
+def student_feedback_message_replied(request):
+    feedback_id = request.POST.get('id')
+    feedback_message = request.POST.get('message')
+    try:
+        feedback = FeedBackStudent.objects.get(id=feedback_id)
+        feedback.feedback_reply = feedback_message
+        feedback.save()
+        return HttpResponse("True")
+    except:
+        return HttpResponse("False") 
 
 
 def view_attendance(request):
     pass
 
-def student_feedback(request):
-    pass
-
-def staff_feedback(request):
-    pass
 
 def student_leave(request):
     pass
+
 
 def staff_leave(request):
     pass

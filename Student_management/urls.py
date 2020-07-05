@@ -49,12 +49,16 @@ urlpatterns = [
     path('edit_course/<str:course_id>', hodviews.edit_course, name="edit_course"),
     path('edit_course_save/', hodviews.edit_course_save, name="edit_course_save"),
     path('view_attendance/', hodviews.view_attendance, name="view_attendance"),
-    path('student_feedback/', hodviews.student_feedback, name="student_feedback"),
-    path('staff_feedback/', hodviews.staff_feedback, name="staff_feedback"),
     path('student_leave/', hodviews.student_leave, name="student_leave"),
     path('staff_leave/', hodviews.staff_leave, name="staff_leave"),
     path('manage_session/', hodviews.manage_session, name="manage_session"),
     path('add_session_save/', hodviews.add_session_save, name="add_session_save"),
+    path('check_email_exist/', hodviews.check_email_exist, name="check_email_exist"),
+    path('check_username_exist/', hodviews.check_username_exist, name="check_username_exist"),
+    path('student_feedback_message/', hodviews.student_feedback_message, name="student_feedback_message"),
+    path('student_feedback_message_replied/', hodviews.student_feedback_message_replied, name="student_feedback_message_replied"),
+    path('staff_feedback_message/', hodviews.staff_feedback_message, name="staff_feedback_message"),
+    path('staff_feedback_message_replied/', hodviews.staff_feedback_message_replied, name="staff_feedback_message_replied"),
 
     #Staff url path
     path('staff_home/', staffviews.staff_home, name="staff_home"),
@@ -74,5 +78,10 @@ urlpatterns = [
     path('student_home/', studentviews.student_home, name="student_home"),
     path('student_view_attendance/', studentviews.student_view_attendance, name="student_view_attendance"),
     path('student_view_attendance_post/', studentviews.student_view_attendance_post, name="student_view_attendance_post"),
+    path('student_apply_leave/', studentviews.student_apply_leave, name="student_apply_leave"),
+    path('student_apply_leave_save/', studentviews.student_apply_leave_save, name="student_apply_leave_save"),
+    path('student_feedbacks/', studentviews.student_feedback, name="student_feedback"),
+    path('student_feedback_save/', studentviews.student_feedback_save, name="student_feedback_save"),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
