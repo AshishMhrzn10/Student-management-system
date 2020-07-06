@@ -15,7 +15,7 @@
           <img src="{% static "dist/img/user2-160x160.jpg" class="img-circle elevation-2" %}" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{user.username}}</a>
+          <a href="{% url 'admin_profile' %}" class="d-block">{{user.username}}</a>
         </div>
       </div>
 
@@ -139,8 +139,8 @@
           </li>
 
           <li class="nav-item">
-            {% url 'student_leave' as student_leave %}
-            <a href="{{student_leave}}" class="nav-link {% if request.path == student_leave %}active{% endif %}">
+            {% url 'student_leave_view' as student_leave_view %}
+            <a href="{{student_leave_view}}" class="nav-link {% if request.path == student_leave_view %}active{% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Student Leave
@@ -149,8 +149,8 @@
           </li>
 
           <li class="nav-item">
-            {% url 'staff_leave' as staff_leave %}
-            <a href="{{staff_leave}}" class="nav-link {% if request.path == staff_leave %}active{% endif %}">
+            {% url 'staff_leave_view' as staff_leave_view %}
+            <a href="{{staff_leave_view}}" class="nav-link {% if request.path == staff_leave_view %}active{% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Staff Leave
@@ -159,8 +159,8 @@
           </li>
 
           <li class="nav-item">
-            {% url 'view_attendance' as view_attendance %}
-            <a href="{{view_attendance}}" class="nav-link {% if request.path == view_attendance %}active{% endif %}">
+            {% url 'admin_view_attendance' as admin_view_attendance %}
+            <a href="{{admin_view_attendance}}" class="nav-link {% if request.path == admin_view_attendance %}active{% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 View Attendance
