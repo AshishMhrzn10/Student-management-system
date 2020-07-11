@@ -14,16 +14,22 @@ class AddStudentForm(forms.Form):
     address = forms.CharField(label="Address", max_length=50,widget=forms.TextInput(attrs={'class':'form-control'}))
     
     course_list = []
-    courses = Courses.objects.all()
-    for course in courses:
-        small_course = (course.id, course.course_name)
-        course_list.append(small_course)
+    try:
+        courses = Courses.objects.all()
+        for course in courses:
+            small_course = (course.id, course.course_name)
+            course_list.append(small_course)
+    except:
+        course_list = []
 
     session_list = []
-    sessions = SessionYearModel.objects.all()
-    for session in sessions:
-        small_session = (session.id, str(session.session_start_year)+' TO '+str(session.session_end_year))
-        session_list.append(small_session)
+    try:
+        sessions = SessionYearModel.objects.all()
+        for session in sessions:
+            small_session = (session.id, str(session.session_start_year)+' TO '+str(session.session_end_year))
+            session_list.append(small_session)
+    except:
+        session_list = []
     
     gender_choice = {
         ('Male','Male'),
@@ -53,10 +59,13 @@ class EditStudentForm(forms.Form):
         course_list = []
     
     session_list = []
-    sessions = SessionYearModel.objects.all()
-    for session in sessions:
-        small_session = (session.id, str(session.session_start_year)+' TO '+str(session.session_end_year))
-        session_list.append(small_session)
+    try:
+        sessions = SessionYearModel.objects.all()
+        for session in sessions:
+            small_session = (session.id, str(session.session_start_year)+' TO '+str(session.session_end_year))
+            session_list.append(small_session)
+    except:
+        session_list = []
 
     gender_choice = {
         ('Male','Male'),
