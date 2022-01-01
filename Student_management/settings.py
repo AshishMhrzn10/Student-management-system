@@ -20,7 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x60!80a06lp4m_i7)v4zroldudfsu=ylcj5x%_c^4@ifv2hn(a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,14 +76,14 @@ WSGI_APPLICATION = 'Student_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE':'django.db.backends.mysql',
-        # 'NAME':'student_management_system',
-        # 'USER':'student_management_system',
-        # 'PASSWORD':'student_management_password',
-        # 'HOST':'localhost',
-        # 'PORT':'3306'
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'student_management_system',
+        'USER':'student_management_system',
+        'PASSWORD':'student_management_password',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
@@ -143,4 +142,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'amaharjan1032@gmail.com'
-EMAIL_HOST_PASSWORD = 'Trio@MSC10'
